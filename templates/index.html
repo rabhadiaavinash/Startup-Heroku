@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startups Profit</title>
+    <link rel="stylesheet" href="{{url_for("static",filename="style.css" )}}">
+</head>
+
+<body>
+    <header class="header">
+        <!-- <h3>This is a header</h3> -->
+    </header>
+    <main>
+        <div class="login">
+            <h1>Startup's Profit</h1>
+            <br>
+            <form action="{{url_for("predict")}}" method="post">
+
+                <br>
+                R&D Spend $ <input type="text" name="R&D Spend" placeholder="R&D Spend" required="required">
+                <br>
+                Administration $ <input type="text" name="Administration" placeholder="Administration"
+                    required="required">
+                <br>
+                Marketing Spend $ <input type="text" name="Marketing Spend" placeholder="Marketing Spend"
+                    required="required">
+                <br>
+                State <select name="state" id="state">
+                    <option value=0>Florida</option>
+                    <option value=1>New York</option>
+                </select>
+                <br>
+                <br>
+                <br>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    Predict Profit
+                </button>
+            </form>
+            <br>
+            <br>
+            <br>
+            <h1>{{prediction_text}}</h1>
+
+
+
+        </div>
+    </main>
+    <footer class="footer">
+        <h3>This is a footer</h3>
+
+    </footer>
+</body>
+
+</html>
